@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrap.min
+//= require prefixfree.min
+//= require bootstrap-datepicker.min
+//= require owl.carousel.min
 //= require_tree .

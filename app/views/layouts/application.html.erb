@@ -1,14 +1,620 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-  <head>
-    <title>PaulineStrategyPlus</title>
-    <%= csrf_meta_tags %>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>Strategy+</title>
+  
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= favicon_link_tag "apple-icon-57x57.png", rel: "apple-touch-icon", sizes: "57x57" %>
+  <%= favicon_link_tag "apple-icon-60x60.png", rel: "apple-touch-icon", sizes: "60x60" %>
+  <%= favicon_link_tag "apple-icon-72x72.png", rel: "apple-touch-icon", sizes: "72x72" %>
+  <%= favicon_link_tag "apple-icon-76x76.png", rel: "apple-touch-icon", sizes: "76x76" %>
+  <%= favicon_link_tag "apple-icon-114x114.png", rel: "apple-touch-icon", sizes: "114x114" %>
+  <%= favicon_link_tag "apple-icon-120x120.png", rel: "apple-touch-icon", sizes: "120x120" %>
+  <%= favicon_link_tag "apple-icon-144x144.png", rel: "apple-touch-icon", sizes: "144x144" %>
+  <%= favicon_link_tag "apple-icon-152x152.png", rel: "apple-touch-icon", sizes: "152x152" %>
+  <%= favicon_link_tag "apple-icon-180x180.png", rel: "apple-touch-icon", sizes: "180x180" %>
+  <%= favicon_link_tag "android-icon-192x192.png", rel: "icon", type: "image/png", sizes: "192x192"  %>
+  <%= favicon_link_tag "favicon-32x32.png", rel: "icon", type: "image/png", sizes: "32x32" %>
+  <%= favicon_link_tag "favicon-96x96.png", rel: "icon", type: "image/png", sizes: "96x96" %>
+  <%= favicon_link_tag "favicon-16x16.png", rel: "icon", type: "image/png", sizes: "16x16" %>
 
-  <body>
-    <%= yield %>
-  </body>
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+  
+  <div class="overlay"></div>
+ 
+  
+  <div class="pagecontent">
+    
+    <!-- Header -->
+    <header class="header">
+      <div class="topbar">
+        <div class="twocols">
+          <div class="colleft">
+            <ul class="list-inline list-menu">
+              <li>
+                <a href="#" class="btn-about">About <span>S+</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="colright">
+            <ul class="list-inline list-menu">
+              <li>
+                <a href="#"><i class="icon-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="icon-instagram"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="icon-twitter"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="logobar">
+        <%= image_tag "logo-strategyplus.png", alt: "Strategy+ - EU news tagline" %>
+        <p class="tagline">EU news tagline</p>
+      </div>
+    </header>   <!-- End Header -->
+
+
+    <!-- Newsletter Block -->
+    <section class="block-newsletter">
+      <div class="container">
+        <div class="newsletter">
+          <div class="twocols">
+            <div class="colleft">
+              <p class="intro">A curated source of geopolitical insights, right in your inbox.</p>
+            </div>
+            <div class="colright">
+              <form class="form form-newsletter">
+                <div class="form-prefix">
+                  <i class="icon-email picto"></i>
+                  <input class="form-control" type="text" name="" value="" placeholder="Subscribe to Newsletter" />
+                  <button type="submit" class="btn-subscribe">Subscribe</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <a href="#newsletter-plus" class="btn-newslettermore" data-toggle="collapse"><span class="caret-lrg"></span></a>
+          <div class="collapse" id="newsletter-plus">
+            <div class="newsletter-plus">
+              <ul class="list-inline list-checks">
+                <li>Receive a couple of insightful links every morning. </li>
+                <li>Followed with a weekly editorial to catch up with everything.</li>
+                <li>And a monthly analysis of the geopolitical situation to take a wider perspective.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="newsletter-thankyou">
+            <span class="circle"><i class="icon-checkmark"></i></span>
+            <p>Thank you for subscribing. You will shortly receive confirmation email.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>  <!-- End Newsletter Block -->
+
+
+    <!-- Content block -->
+    <section class="block-news">
+      <div class="container">
+
+        <div class="dateselect">
+          <p class="title">NEWS SELECTION FOR</p>
+          <ul class="list-inline list-calselect">
+            <li><a href="#" class="btn-calprev"><i class="icon-arrow"></i></a></li>
+            <li class="currentdate"><a href="#" class="btn-pickdate">Monday, Sept 6, 2016 <i class="icon-calendar"></i></a></li>
+            <li><a href="#" class="btn-calnext"><i class="icon-arrow"></i></a></li>
+          </ul>
+        </div>
+        
+        
+        <!-- News Slider -->
+        <div class="newslider">
+          
+          <!-- Slide 1 -->
+          <div class="newsblock">
+            
+            <div class="intro">
+              <h5>The civil war in Syria keeps going on</h5>
+              <p>Today we explore the latest events unfolding in Syria's civil war. U.S. & Russia superpowers can't seem to agree. Raids keep occurring on Syrians forces, rebels and IS as well as UN convoy. China is surprisingly absent and the UN remains week.</p>
+            </div>
+
+            <ul class="list-unstyled list-news list-newsdefault">
+              <li>
+                <div class="news-image">
+                  <a href="#">
+                    <div class="imgbox">
+                      <%= image_tag "news-1.jpg", alt: "Eurozone Growth Fears" %>
+                    </div>
+                  </a>
+                </div>
+                <div class="news-content">
+                  <a href="#">
+                    <p class="title">Eurozone Q2 growth weakens</p>
+                  </a>
+                  <p class="short"><a href="#" class="news-source">Euronews</a> <a href="#">There was only weak growth again for the eurozone economy between April and June.</a></p>
+                  <div class="news-actions">
+                    <ul class="list-unstyled list-share">
+                      <li><a href="#"><i class="icon-twitter"></i></a></li>
+                      <li><a href="#"><i class="icon-facebook"></i></a></li>
+                      <li><a href="#"><i class="icon-slack"></i></a></li>
+                      <li><a href="#"><i class="icon-email"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="news-image">
+                  <a href="#">
+                    <div class="imgbox">
+                      <%= image_tag "news-2.jpg", alt: "Bayer buys Monsanto" %>
+                    </div>
+                  </a>
+                </div>
+                <div class="news-content">
+                  <a href="#">
+                    <p class="title">Bayer rises bid price for Monsanto</p>
+                  </a>
+                  <p class="short"><a href="#" class="news-source">BBC</a> <a href="#">Bayer’s quest to become the world’s largest producer of seeds and pesticides has led it to bump up the price it is willing to pay for US firm Monsanto.</a></p>
+                  <div class="news-actions">
+                    <ul class="list-unstyled list-share">
+                      <li><a href="#"><i class="icon-twitter"></i></a></li>
+                      <li><a href="#"><i class="icon-facebook"></i></a></li>
+                      <li><a href="#"><i class="icon-slack"></i></a></li>
+                      <li><a href="#"><i class="icon-email"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="news-image">
+                  <a href="#">
+                    <div class="imgbox">
+                      <%= image_tag "news-3.jpg", alt: "Philae found!" %>
+                    </div>
+                  </a>
+                </div>
+                <div class="news-content">
+                  <a href="#">
+                    <p class="title">Philae - Lost... and Found!</p>
+                  </a>
+                  <p class="short"><a href="#" class="news-source">Der Spiegel</a> <a href="#">The final resting place of Europe’s comet landing craft Philae has been found.</a></p>
+                  <div class="news-actions">
+                    <ul class="list-unstyled list-share">
+                      <li><a href="#"><i class="icon-twitter"></i></a></li>
+                      <li><a href="#"><i class="icon-facebook"></i></a></li>
+                      <li><a href="#"><i class="icon-slack"></i></a></li>
+                      <li><a href="#"><i class="icon-email"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="news-image">
+                  <a href="#">
+                    <div class="imgbox">
+                      <%= image_tag "news-4.jpg", alt: "Nobel judges scandal" %>
+                    </div>
+                  </a>
+                </div>
+                <div class="news-content">
+                  <a href="#">
+                    <p class="title">Nobel judges fired in medical scandal</p>
+                  </a>
+                  <p class="short"><a href="#" class="news-source">BBC</a> <a href="#">Two judges are asked to leave a Swedish panel that picks the Nobel prize for medicine in a scandal over a disgraced Italian transplant surgeon.</a></p>
+                  <div class="news-actions">
+                    <ul class="list-unstyled list-share">
+                      <li><a href="#"><i class="icon-twitter"></i></a></li>
+                      <li><a href="#"><i class="icon-facebook"></i></a></li>
+                      <li><a href="#"><i class="icon-slack"></i></a></li>
+                      <li><a href="#"><i class="icon-email"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            
+          </div>
+          
+          <!-- Slide 2 -->
+          <div class="newsblock">
+            
+            
+                        
+            
+            <div class="intro">
+              <h5>The civil war in Syria keeps going on</h5>
+              <p>Today we explore the latest events unfolding in Syria's civil war. U.S. & Russia superpowers can't seem to agree. Raids keep occurring on Syrians forces, rebels and IS as well as UN convoy. China is surprisingly absent and the UN remains week.</p>
+            </div>
+            
+            
+            <ul class="list-unstyled list-news">
+              <li>
+                <div class="news-image">
+                  <a href="#">
+                    <div class="imgbox">
+                      <%= image_tag "news-5.jpg", alt: "Eurozone Growth Fears" %>
+                    </div>
+                  </a>
+                </div>
+                <div class="news-content">
+                  <a href="#">
+                    <p class="title">Eurozone Q2 growth weakens</p>
+                  </a>
+                  <p class="short"><a href="#" class="news-source">Euronews</a> <a href="#">There was only weak growth again for the eurozone economy between April and June. This is confirmed by two separate sets of data acquired during past two months. Even EU Statistics Office confirme it late Friday.</a></p>
+                  <div class="news-actions">
+                    <ul class="list-unstyled list-share">
+                      <li><a href="#"><i class="icon-twitter"></i></a></li>
+                      <li><a href="#"><i class="icon-facebook"></i></a></li>
+                      <li><a href="#"><i class="icon-slack"></i></a></li>
+                      <li><a href="#"><i class="icon-email"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="news-image">
+                  <a href="#">
+                    <div class="imgbox">
+                      <%= image_tag "news-6.jpg", alt: "Bayer buys Monsanto" %>
+                    </div>
+                  </a>
+                </div>
+                <div class="news-content">
+                  <a href="#">
+                    <p class="title">Bahamas files: New leak exposes offshore 'tax haven' dealings of politicians, companies</p>
+                  </a>
+                  <p class="short"><a href="#" class="news-source">BBC</a> <a href="#">Bayer’s quest to become the world’s largest producer of seeds and pesticides has led it to bump up the price it is willing to pay for US firm Monsanto. And the deal is confirmed once the bid is updated.</a></p>
+                  <div class="news-actions">
+                    <ul class="list-unstyled list-share">
+                      <li><a href="#"><i class="icon-twitter"></i></a></li>
+                      <li><a href="#"><i class="icon-facebook"></i></a></li>
+                      <li><a href="#"><i class="icon-slack"></i></a></li>
+                      <li><a href="#"><i class="icon-email"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="news-image">
+                  <a href="#">
+                    <div class="imgbox">
+                      <%= image_tag "news-7.jpg", alt: "Philae found!" %>
+                    </div>
+                  </a>
+                </div>
+                <div class="news-content">
+                  <a href="#">
+                    <p class="title">Philae - Lost... and Found!</p>
+                  </a>
+                  <p class="short"><a href="#" class="news-source">Der Spiegel</a> <a href="#">The final resting place of Europe’s comet landing craft Philae has been found. The final resting place of Europe’s comet landing craft Philae has been found.</a></p>
+                  <div class="news-actions">
+                    <ul class="list-unstyled list-share">
+                      <li><a href="#"><i class="icon-twitter"></i></a></li>
+                      <li><a href="#"><i class="icon-facebook"></i></a></li>
+                      <li><a href="#"><i class="icon-slack"></i></a></li>
+                      <li><a href="#"><i class="icon-email"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="news-image">
+                  <a href="#">
+                    <div class="imgbox">
+                      <%= image_tag "news-8.jpg", alt: "Nobel judges scandal" %>
+                    </div>
+                  </a>
+                </div>
+                <div class="news-content">
+                  <a href="#">
+                    <p class="title">Nobel judges fired in medical scandal</p>
+                  </a>
+                  <p class="short"><a href="#" class="news-source">BBC</a> <a href="#">Two judges are asked to leave a Swedish panel that picks the Nobel prize for medicine in a scandal over a disgraced Italian transplant surgeon.</a></p>
+                  <div class="news-actions">
+                    <ul class="list-unstyled list-share">
+                      <li><a href="#"><i class="icon-twitter"></i></a></li>
+                      <li><a href="#"><i class="icon-facebook"></i></a></li>
+                      <li><a href="#"><i class="icon-slack"></i></a></li>
+                      <li><a href="#"><i class="icon-email"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="news-image">
+                  <a href="#">
+                    <div class="imgbox">
+                      <%= image_tag "news-9.jpg", alt: "Philae found!" %>
+                    </div>
+                  </a>
+                </div>
+                <div class="news-content">
+                  <a href="#">
+                    <p class="title">Philae - Lost... and Found!</p>
+                  </a>
+                  <p class="short"><a href="#" class="news-source">Der Spiegel</a> <a href="#">The final resting place of Europe’s comet landing craft Philae has been found. And it's not where you would expect it. It's actually much more than that. A long long time ago in a galaxy far far away...</a></p>
+                  <div class="news-actions">
+                    <ul class="list-unstyled list-share">
+                      <li><a href="#"><i class="icon-twitter"></i></a></li>
+                      <li><a href="#"><i class="icon-facebook"></i></a></li>
+                      <li><a href="#"><i class="icon-slack"></i></a></li>
+                      <li><a href="#"><i class="icon-email"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            
+            
+            
+          </div>
+          
+          
+          <!-- Slide 3 -->
+          <div class="newsblock">
+            
+            <div class="intro">
+              <h5>The civil war in Syria keeps going on</h5>
+              <p>Today we explore the latest events unfolding in Syria's civil war. U.S. & Russia superpowers can't seem to agree. Raids keep occurring on Syrians forces, rebels and IS as well as UN convoy. China is surprisingly absent and the UN remains week.</p>
+            </div>
+
+            <ul class="list-unstyled list-news list-newsdefault">
+              <li>
+                <div class="news-image">
+                  <a href="#">
+                    <div class="imgbox">
+                      <%= image_tag "news-1.jpg", alt: "Eurozone Growth Fears" %>
+                    </div>
+                  </a>
+                </div>
+                <div class="news-content">
+                  <a href="#">
+                    <p class="title">Eurozone Q2 growth weakens</p>
+                  </a>
+                  <p class="short"><a href="#" class="news-source">Euronews</a> <a href="#">There was only weak growth again for the eurozone economy between April and June.</a></p>
+                  <div class="news-actions">
+                    <ul class="list-unstyled list-share">
+                      <li><a href="#"><i class="icon-twitter"></i></a></li>
+                      <li><a href="#"><i class="icon-facebook"></i></a></li>
+                      <li><a href="#"><i class="icon-slack"></i></a></li>
+                      <li><a href="#"><i class="icon-email"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="news-image">
+                  <a href="#">
+                    <div class="imgbox">
+                      <%= image_tag "news-2.jpg", alt: "Bayer buys Monsanto" %>
+                    </div>
+                  </a>
+                </div>
+                <div class="news-content">
+                  <a href="#">
+                    <p class="title">Bayer rises bid price for Monsanto</p>
+                  </a>
+                  <p class="short"><a href="#" class="news-source">BBC</a> <a href="#">Bayer’s quest to become the world’s largest producer of seeds and pesticides has led it to bump up the price it is willing to pay for US firm Monsanto.</a></p>
+                  <div class="news-actions">
+                    <ul class="list-unstyled list-share">
+                      <li><a href="#"><i class="icon-twitter"></i></a></li>
+                      <li><a href="#"><i class="icon-facebook"></i></a></li>
+                      <li><a href="#"><i class="icon-slack"></i></a></li>
+                      <li><a href="#"><i class="icon-email"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="news-image">
+                  <a href="#">
+                    <div class="imgbox">
+                      <%= image_tag "news-3.jpg", alt: "Philae found!" %>
+                    </div>
+                  </a>
+                </div>
+                <div class="news-content">
+                  <a href="#">
+                    <p class="title">Philae - Lost... and Found!</p>
+                  </a>
+                  <p class="short"><a href="#" class="news-source">Der Spiegel</a> <a href="#">The final resting place of Europe’s comet landing craft Philae has been found.</a></p>
+                  <div class="news-actions">
+                    <ul class="list-unstyled list-share">
+                      <li><a href="#"><i class="icon-twitter"></i></a></li>
+                      <li><a href="#"><i class="icon-facebook"></i></a></li>
+                      <li><a href="#"><i class="icon-slack"></i></a></li>
+                      <li><a href="#"><i class="icon-email"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="news-image">
+                  <a href="#">
+                    <div class="imgbox">
+                      <%= image_tag "news-4.jpg", alt: "Nobel judges scandal" %>
+                    </div>
+                  </a>
+                </div>
+                <div class="news-content">
+                  <a href="#">
+                    <p class="title">Nobel judges fired in medical scandal</p>
+                  </a>
+                  <p class="short"><a href="#" class="news-source">BBC</a> <a href="#">Two judges are asked to leave a Swedish panel that picks the Nobel prize for medicine in a scandal over a disgraced Italian transplant surgeon.</a></p>
+                  <div class="news-actions">
+                    <ul class="list-unstyled list-share">
+                      <li><a href="#"><i class="icon-twitter"></i></a></li>
+                      <li><a href="#"><i class="icon-facebook"></i></a></li>
+                      <li><a href="#"><i class="icon-slack"></i></a></li>
+                      <li><a href="#"><i class="icon-email"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            
+            
+            
+            <div class="offcontent">
+              
+              <div class="offhead">
+                <h3>Republican chief: I won't defend Trump</h3>
+                <p class="offintro">Paul Ryan, the most senior elected US Republican, says he will no longer defend Donald Trump after outrage over his remarks about groping women.</p>
+              </div>
+              
+              <p>House of Representatives Speaker Paul Ryan vowed to focus on defending seats in Congress, but did not end his endorsement of the party's nominee.</p>
+              <p>Mr Trump tweeted that Mr Ryan should not waste his time fighting him.</p>
+              <figure>
+                <%= image_tag "news-large.jpg", alt: "Image Large" %>
+                <figcaption>
+                  This is small caption
+                </figcaption>
+              </figure>
+              <p>Earlier Democrat rival Hillary Clinton cast doubt on Mr Trump's apology for the remarks, made 11 years ago.</p>
+              <ul>
+                <li>On Sunday, Mr Trump described his words as "locker-room talk".</li>
+                <li>In a bitter televised debate, a month before the US presidential election, Mr Trump denied he had groped anyone.</li>
+              </ul>
+              <p>Mrs Clinton tweeted on Monday that, if he stood by this assertion, he was "clearly not sorry".</p>
+              
+              
+              <p>&nbsp;</p>
+              
+              
+              <ul class="list-inline list-gallery">
+              <li>
+                <a href="#">
+                  <%= image_tag "news-1.jpg", alt: "Image" %>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <%= image_tag "news-2.jpg", alt: "Image" %>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <%= image_tag "news-3.jpg", alt: "Image" %>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <%= image_tag "news-4.jpg", alt: "Image" %>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <%= image_tag "news-5.jpg", alt: "Image" %>
+                </a>
+              </li>
+            </ul>
+            
+            <p>&nbsp;</p>
+            
+            <ul class="list-unstyled list-headings">
+              <li>
+                <a href="#">
+                  <p class="title">This is some headline element</p>
+                  <p>There was only weak growth again for the eurozone economy between April and June.</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <p class="title">Another headline element, this time longer one to show how it looks</p>
+                  <p>There was only weak growth again for the eurozone economy between April and June.</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <p class="title">This is some headline element</p>
+                  <p>There was only weak growth again for the eurozone economy between April and June.</p>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <p class="title">Another headline element, this time longer one to show how it looks</p>
+                  <p>There was only weak growth again for the eurozone economy between April and June.</p>
+                </a>
+              </li>
+            </ul>
+              
+              
+            </div>
+
+          
+        </div> <!-- End News Slider -->
+
+        
+        
+        
+        
+        
+        </div>
+        
+        
+        <!-- More Days -->
+        <div class="text-center">
+          <a href="#" class="btn btn-prevdays">Previous Days</a>
+        </div>
+
+      </div>
+    </section> <!-- End Content block -->
+
+
+    
+    
+    
+  </div>
+  
+  
+  
+  
+  <!-- About Us -->
+  <section class="about">
+    
+    <a href="#" class="btn-close"><i class="icon-x"></i></a>
+    
+    <div class="inner">
+      <div class="about-content">
+        <h2>About us</h2>
+        <p>Curabitur pellentesque, erat ut luctus semper, nunc libero varius eros, eu tempor massa ipsum egestas est. Vivamus id ultrices nunc. Suspendisse volutpat sem ac nulla tincidunt semper.</p> 
+        <p>Nam congue arcu sit amet nunc hendrerit, et tristique arcu eleifend. Ut pharetra pellentesque dolor, et auctor urna laoreet non. Integer mollis orci non urna cursus tincidunt. Mauris vel imperdiet nisi, id interdum elit. Mauris eget nisl imperdiet, sagittis velit et, bibendum justo. Integer pellentesque justo ac rutrum ullamcorper. Sed malesuada enim id magna porta sodales.</p> 
+        <p>
+  Duis diam purus, aliquet vel eleifend dictum, euismod in lectus. Ut condimentum lacinia arcu quis sollicitudin.</p>
+        <div class="logobox">
+          <%= image_tag "logo-strategyplus-white.png", alt: "Strategy Plus" %>
+        </div>
+      </div>
+    </div>
+  </section> <!-- End About Us -->
+  
+  <!-- Footer -->
+  <!--
+  <footer class="footer">
+    <div class="inner">
+      <p class="copy">&COPY; 2016. The Three Monkeys. All Rights Reserved</p>
+    </div>
+  </footer> --> <!-- End Footer -->
+    
+</body>
 </html>
