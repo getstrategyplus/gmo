@@ -1,0 +1,14 @@
+<div class="newsblock">
+
+  <div class="intro">
+    <h5><%= newsletter.title %></h5>
+    <p><%= newsletter.excerpt %></p>
+  </div>
+
+  <ul class="list-unstyled list-news list-newsdefault">
+    <% newsletter.news.each do |news| %>
+      <%= render news %>
+    <% end %>
+  </ul>
+  
+</div>

@@ -1,0 +1,27 @@
+<li>
+  <div class="news-image">
+    <a href="#">
+      <div class="imgbox">
+        <%= image_tag news.image, alt: news.image_alt %>
+      </div>
+    </a>
+  </div>
+  <div class="news-content">
+    <a href="#">
+      <p class="title"><%= news.title %></p>
+    </a>
+    <p class="short">
+      <%= link_to news.source.name, news.source.address_url, class: "news-source" %> 
+      <%= link_to news.title, news.address_url %>
+
+    </p>
+    <div class="news-actions">
+      <ul class="list-unstyled list-share">
+        <li><a href="#"><i class="icon-twitter"></i></a></li>
+        <li><a href="#"><i class="icon-facebook"></i></a></li>
+        <li><a href="#"><i class="icon-slack"></i></a></li>
+        <li><a href="#"><i class="icon-email"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</li>

@@ -1,2 +1,26 @@
-<h1>Newsletter#show</h1>
-<p>Find me in app/views/newsletter/show.html.erb</p>
+    <!-- Content block -->
+    <section class="block-news">
+      <div class="container">
+
+        <div class="dateselect">
+          <p class="title">NEWS SELECTION FOR</p>
+          <ul class="list-inline list-calselect">
+            <li><a href="#" class="btn-calprev"><i class="icon-arrow"></i></a></li>
+            <li class="currentdate"><a href="#" class="btn-pickdate">Monday, Sept 6, 2016 <i class="icon-calendar"></i></a></li>
+            <li><a href="#" class="btn-calnext"><i class="icon-arrow"></i></a></li>
+          </ul>
+        </div>      
+        <!-- News Slider -->
+        <div class="newslider">
+          <% @newsletters.each do |newsletter| %>
+            <%= render newsletter %>
+          <% end %>
+        </div> <!-- End News Slider -->
+        </div>
+        <!-- More Days -->
+        <div class="text-center">
+          <a href="#" class="btn btn-prevdays">Previous Days</a>
+        </div>
+
+      </div>
+    </section> <!-- End Content block -->
