@@ -18,8 +18,9 @@ ActiveRecord::Schema.define(version: 20161018211347) do
   create_table "news", force: :cascade do |t|
     t.string   "title"
     t.text     "excerpt"
-    t.string   "url"
+    t.string   "address_url"
     t.string   "image"
+    t.string   "image_alt"
     t.integer  "source_id"
     t.integer  "newsletter_id"
     t.datetime "created_at",    null: false
@@ -37,10 +38,10 @@ ActiveRecord::Schema.define(version: 20161018211347) do
   end
 
   create_table "sources", force: :cascade do |t|
-    t.string   "domain"
+    t.string   "address_url"
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_foreign_key "news", "newsletters"
