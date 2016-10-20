@@ -11,7 +11,7 @@ class NewslettersController < ApplicationController
     if @newsletters.empty?
       @news_date = Newsletter.next_sent_date(@news_date) 
 
-      if @news_date.is_a?(Date)
+      if @news_date
         redirect_to newsletter_show_path(date: date_to_param(@news_date))
       else
         redirect_to root_path 
@@ -27,9 +27,11 @@ class NewslettersController < ApplicationController
 
   def param_to_date(date)
     begin
-      Date.strptime(date, "%d-%m-%Y")
-    rescue TypeError
-      Date.today
+      if date
+        Date.strptime(date, "%d-%m-%Y")
+      else
+        Date.today
+      end
     rescue ArgumentError
       raise InvalidDateParam
     end
