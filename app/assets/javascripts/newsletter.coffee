@@ -9,25 +9,38 @@ $ ->
     $('body').addClass 'delayloaded'
     return
   ), 2000
+
   #-- Show / Hide About
   $('.btn-about').on 'click', (e) ->
     e.preventDefault()
     $('body').addClass 'showabout'
     return
+
   $('.about .btn-close').on 'click', (e) ->
     e.preventDefault()
     $('body').removeClass 'showabout'
     return
+
   #-- Date picker
   if $('.btn-pickdate').length != 0
+
     $(this).on 'click', (e) ->
       e.preventDefault()
       return
-    $('.btn-pickdate').datepicker
+
+    $('.btn-pickdate').datepicker(
       orientation: 'bottom auto'
       autoclose: true
       format: 'M/dd/yyyy'
       disableTouchKeyboard: true
+    ).on 'changeDate', (e) ->
+      date = e.date
+      mm = (date.getMonth() + 1).toString();
+      dd = date.getDate().toString();
+
+      redirect_url = "/#{[!dd[1] and '0', dd,'-', !mm[1] and '0', mm,'-', date.getFullYear()].filter((e)-> e != false ).join('')}";   
+      window.location = redirect_url
+
     $('.btn-pickdate-alt').on 'click', (e) ->
       e.preventDefault()
       $('.btn-pickdate').datepicker 'show'
@@ -48,6 +61,7 @@ $ ->
   ###
 
   $('.newsletter').on 'click', (e) ->
+
     if $(e.target).hasClass('btn-newslettermore')
       $('.btn-newslettermore').toggleClass 'open'
       console.log 'button'
@@ -56,6 +70,7 @@ $ ->
       $('.btn-newslettermore').addClass 'open'
       console.log 'other'
     return
+
   #-- Newsletter subscribe Thank you message
   $('.btn-subscribe').on 'click', (e) ->
     e.preventDefault()
@@ -63,6 +78,7 @@ $ ->
       $('.newsletter-thankyou').fadeIn()
       return
     return
+
   #-- News Blocks slider
   if $('.newslider').length != 0
     $('.newslider').owlCarousel
@@ -76,7 +92,9 @@ $ ->
       afterInit: ->
         @jumpTo 1
         return
+
     slider = $('.newslider').data('owlCarousel')
+
     #- Slider navigation - change dates
     $('.btn-calnext').on 'click', (e) ->
       e.preventDefault()
