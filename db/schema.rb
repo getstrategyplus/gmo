@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20161018211347) do
 
   create_table "newsletters", force: :cascade do |t|
     t.string   "title"
+    t.date     "sent_at"
     t.text     "excerpt"
     t.string   "address_url"
     t.datetime "created_at",  null: false
