@@ -10,11 +10,10 @@ class NewslettersController < ApplicationController
     
     if @newsletters.empty?
       @news_date = Newsletter.next_sent_date(@news_date) 
-
       if @news_date
-        redirect_to newsletter_show_path(date: date_to_param(@news_date))
+        redirect_to newsletter_show_path(date: date_to_param(@news_date)) 
       else
-        redirect_to root_path 
+        @news_date = param_to_date(params[:date])
       end
     end
   end
