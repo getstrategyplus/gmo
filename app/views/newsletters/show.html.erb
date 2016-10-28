@@ -12,9 +12,13 @@
         </div>      
         <!-- News Slider -->
         <div class="newslider">
+        <% if !@newsletters.empty? %>
           <% @newsletters.each do |newsletter| %>
             <%= render newsletter %>
           <% end %>
+        <% else %>
+          <p class="lead text-center">No articles yet :(</p>
+        <% end %>
         </div> <!-- End News Slider -->
         </div>
         <!-- More Days -->
