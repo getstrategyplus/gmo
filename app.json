@@ -1,0 +1,13 @@
+{
+  "name": "strategy-plus",
+  "description": "A curated source of geopolitical insights, right in your inbox.",
+  "keywords": [
+    "dokku",
+    "rails"
+  ],
+  "scripts": {
+    "dokku": {
+      "postdeploy": "bundle exec whenever --update-crontab"
+    }
+  }
+}

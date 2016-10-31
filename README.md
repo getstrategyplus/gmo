@@ -34,4 +34,4 @@ To update the newsletter on Strategy+ web application you just need to call a ra
 dokku run rake crawler:fetch 
 ```
 
-This rake task is idempotent, that means you call it many times without need to worry about creating duplicated data. If a newsletter is already crawled, the task will just update the newsletter data.
+This rake task is idempotent, that means you call it many times without need to worry about creating duplicated data. If a newsletter is already crawled, the task will just update the newsletter data. Also, this task will run every minute fetching updates from Goodbits newsletters.
