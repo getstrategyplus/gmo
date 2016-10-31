@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.3.1' #or any other ruby version
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
@@ -23,6 +24,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 gem 'nokogiri'
+gem 'rails_12factor', group: :production
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -37,6 +39,7 @@ group :development, :test do
   gem 'webmock'
   gem 'vcr'
   gem 'rb-readline'
+  gem 'dokku-cli', require: false
 end
 
 group :development do
