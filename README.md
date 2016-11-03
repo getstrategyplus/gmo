@@ -2,7 +2,27 @@
 
 # Getting started
 
-Strategy+ was built with Rails 5.0.1 and Ruby 2.3.1 and you must have installed Postgre SQL in your development machine. If you are a OS X user I recommend you to install using [postgreapp.com](http://postgresapp.com) instead of Homebrew.
+To configure Strategy+ in you local machine, make sure you have Ruby 2.3.1 and Postgre SQL in your development machine. You can use [RVM](https://rvm.io/) to manage and install multiple Ruby versions in your local machine. If you are a OS X user I recommend you to install using [postgreapp.com](http://postgresapp.com) instead of Homebrew.
+
+Clone the Git repository:
+
+```
+git clone git@gitlab.com:gushonorato/strategy-plus.git
+```
+
+Run bundle command:
+
+```
+bundle install
+```
+
+Start the web application using foreman:
+
+```
+rails s
+```
+
+*NOTE:* All delayed jobs are executed inline in development mode. You don't need to start the deamon in development.
 
 # Deploy
 
@@ -18,6 +38,14 @@ To run your migrations in production, just call:
 
 ```
 dokku run rake db:migrate
+```
+
+## Configuring Mailchimp
+
+You have to configure `MAILCHIMP_API_KEY` environment variable to get newsletter subscription working. Use the following command to do that:
+
+```
+dokku config:set strategy-plus MAILCHIMP_API_KEY=<your api key>
 ```
 
 ## Installing SSL certificates

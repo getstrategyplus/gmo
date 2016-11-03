@@ -13,5 +13,6 @@ module StrategyPlus
     # -- all .rb files in that directory are automatically loaded.
 
     config.autoload_paths << Rails.root.join('app')
+    config.active_job.queue_adapter = :delayed_job
   end
 end

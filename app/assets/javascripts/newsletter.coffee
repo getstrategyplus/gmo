@@ -74,10 +74,10 @@ $ ->
   #-- Newsletter subscribe Thank you message
   $('.btn-subscribe').on 'click', (e) ->
     e.preventDefault()
-    $('.newsletter .twocols, .btn-newslettermore, #newsletter-plus').fadeOut ->
-      $('.newsletter-thankyou').fadeIn()
-      return
-    return
+    console.log this
+    $.post $(this).closest('form').attr('action'), $(this).closest('form').serialize(), ->
+      $('.newsletter .twocols, .btn-newslettermore, #newsletter-plus').fadeOut ->
+        $('.newsletter-thankyou').fadeIn()
 
   #-- News Blocks slider
   if $('.newslider').length != 0
