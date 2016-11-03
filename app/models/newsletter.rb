@@ -1,5 +1,5 @@
 class Newsletter < ApplicationRecord
-  has_many :news
+  has_many :news, dependent: :destroy
 
   scope :sent_at_date, -> (date) { where(sent_at: date) }
 

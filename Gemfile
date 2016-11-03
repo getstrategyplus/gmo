@@ -25,7 +25,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'nokogiri'
 gem 'rails_12factor', group: :production
-gem 'whenever', :require => false
+gem 'clockwork', require: false
 gem 'delayed_job_active_record'
 gem 'gibbon'
 # Use Redis adapter to run Action Cable in production

@@ -4,10 +4,5 @@
   "keywords": [
     "dokku",
     "rails"
-  ],
-  "scripts": {
-    "dokku": {
-      "postdeploy": "bundle exec whenever --update-crontab"
-    }
-  }
+  ]
 }

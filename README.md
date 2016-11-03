@@ -26,7 +26,22 @@ rails s
 
 # Deploy
 
+## Environment configuration
+
 The easiest way to prepare a server on Digital Ocean is using [Dokku Project](http://dokku.viewdocs.io/dokku/). Dokku works as a mini-heroku and it's very well suited for small projects like Strategy+. This [tutorial](http://www.rubyfleebie.com/how-to-use-dokku-on-digitalocean-and-deploy-rails-applications-like-a-pro/) explains how to deploy a Rails application on Digital Ocean using Dokku. I'll just spend a few minutes and your application will be ready.
+
+Don't forget to create the worker (delayed_job) and the scheduler (clockwork.rb) containers, running the following commands on server:
+
+```
+dokku ps:scale strategy-plus worker=1
+```
+
+```
+dokku ps:scale strategy-plus scheduler=1
+```
+
+
+## Deploy new code
 
 After you configure Dokku, simply push your local code into Dokku Git repository to deploy a new version:
 
