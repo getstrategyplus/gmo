@@ -24,9 +24,8 @@ $ ->
   #-- Date picker
   if $('.btn-pickdate').length != 0
 
-    $(this).on 'click', (e) ->
+    $('.btn-pickdate').on 'click', (e) ->
       e.preventDefault()
-      return
 
     $('.btn-pickdate').datepicker(
       orientation: 'bottom auto'
