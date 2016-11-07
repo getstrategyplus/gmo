@@ -1,15 +1,15 @@
 <li>
   <div class="news-image">
-    <a href="#">
+    <%= link_to news.address_url do %>
       <div class="imgbox">
         <%= image_tag news.image, alt: news.image_alt %>
       </div>
-    </a>
+    <% end %>
   </div>
   <div class="news-content">
-    <a href="#">
+    <%= link_to news.address_url do %>
       <p class="title"><%= news.title %></p>
-    </a>
+    <% end %>
     <p class="short">
       <%= link_to news.source_name, news.source_name, class: "news-source" %> 
       <%= link_to news.excerpt, news.address_url %>
