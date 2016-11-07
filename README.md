@@ -63,6 +63,15 @@ You have to configure `MAILCHIMP_API_KEY` environment variable to get newsletter
 dokku config:set strategy-plus MAILCHIMP_API_KEY=<your api key>
 ```
 
+## Configuring Buffer Integration
+
+You have to configure `BUFFER_API_KEY` environment variable to get posts created on buffer. Use the following command to do that:
+
+```
+dokku config:set strategy-plus BUFFER_API_KEY=<your api key>
+```
+
+
 ## Installing SSL certificates
 
 Use [Dokku Let's Encrypt plugin](https://github.com/dokku/dokku-letsencrypt#usage). It will generate, validate and install your certificate automatically. I suggest you to read carefully the plugin documentation. There is such a great features like auto renew certificates, etc.
@@ -77,4 +86,4 @@ To update the newsletter on Strategy+ web application you just need to call a ra
 dokku run rake crawler:fetch 
 ```
 
-This rake task is idempotent, that means you call it many times without need to worry about creating duplicated data. If a newsletter is already crawled, the task will just update the newsletter data. Also, this task will run every minute fetching updates from Goodbits newsletters.
+This rake task is idempotent, that means you call it many times without need to worry about creating duplicated data. If a newsletter is already crawled, the task will just update the newsletter data. Also, this task will run every 5 minutes fetching updates from Goodbits newsletters.
