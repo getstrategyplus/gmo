@@ -6,7 +6,7 @@ class BufferNewsletterJob < ApplicationJob
     newsletter = Newsletter.find(id)
     url = Rails.application.routes.url_helpers.newsletter_show_url(date: newsletter.sent_at, host: 'getstrategyplus.com')
 
-    client = Buffer::Client.new('1/9f76e6480849461d9f34bf1e29fefc26')
+    client = Buffer::Client.new(Rails.application.secrets.buffer_api_key)
 
     create_update(client, 
       text: "#{newsletter.title} - #{url}", 
