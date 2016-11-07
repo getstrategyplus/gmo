@@ -11,16 +11,32 @@
       <p class="title"><%= news.title %></p>
     <% end %>
     <p class="short">
-      <%= link_to news.source_name, news.source_name, class: "news-source" %> 
+      <%= link_to news.source_name, news.address_url, class: "news-source" %> 
       <%= link_to news.excerpt, news.address_url %>
 
     </p>
     <div class="news-actions">
       <ul class="list-unstyled list-share">
-        <li><a href="#"><i class="icon-twitter"></i></a></li>
-        <li><a href="#"><i class="icon-facebook"></i></a></li>
-        <li><a href="#"><i class="icon-slack"></i></a></li>
-        <li><a href="#"><i class="icon-email"></i></a></li>
+        <li>
+          <%= link_to "https://twitter.com/home?status=#{news.address_url}" do %>
+            <i class="icon-twitter"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{news.address_url}" do %>
+            <i class="icon-facebook"></i>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{news.address_url}" do %>
+            <i class="icon-slack"></i>
+          <% end %>
+        </li>        
+        <li>
+          <%= link_to "mailto:?&subject=#{news.address_url}&body=#{news.excerpt}" do %>
+            <i class="icon-email"></i>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>
