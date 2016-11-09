@@ -59,6 +59,10 @@ $ ->
   }); 
   ###
 
+  $('[role=popup]').on 'click', (e) ->
+    e.preventDefault();
+    window.open($(this).attr('href'), 'Share', 'resizable,scrollbars,status,width=600,height=350,left='+((screen.width / 2) - (600 / 2)) + ',top=' + ((screen.height / 2) - (350 / 2)))
+
   $('.newsletter').on 'click', (e) ->
 
     if $(e.target).hasClass('btn-newslettermore')

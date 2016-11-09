@@ -18,17 +18,17 @@
     <div class="news-actions">
       <ul class="list-unstyled list-share">
         <li>
-          <%= link_to "https://twitter.com/home?status=#{news.address_url}" do %>
+          <%= link_to "https://twitter.com/home?status=#{news.address_url}", role: 'popup' do %>
             <i class="icon-twitter"></i>
           <% end %>
         </li>
         <li>
-          <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{news.address_url}" do %>
+          <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{news.address_url}", role: 'popup' do %>
             <i class="icon-facebook"></i>
           <% end %>
         </li>
         <li>
-          <%= link_to "https://www.facebook.com/sharer/sharer.php?u=#{news.address_url}" do %>
+          <%= link_to "https://slackbutton.herokuapp.com/post/new/?url=#{news.address_url}", role: 'popup' do %>
             <i class="icon-slack"></i>
           <% end %>
         </li>        
