@@ -7,7 +7,7 @@ To configure Strategy+ in you local machine, make sure you have Ruby 2.3.1 and P
 Clone the Git repository:
 
 ```
-git clone git@gitlab.com:gushonorato/strategy-plus.git
+git clone git@github.com:getstrategyplus/strategyplus.git
 ```
 
 Run bundle command:
