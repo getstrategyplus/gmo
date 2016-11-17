@@ -4,10 +4,11 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   
-  <title>Strategy+</title>
+  <title><%= yield(:title) || 'A simple newsletter made by experts to understand global politics' %> - Strategy+</title>
   
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <%= tag :meta, name: 'description', content: yield(:meta_description) || 'Strategy+ is the smartest way to follow various topics about the global political agenda. Receive every day a small email to receive a briefing about key geopolitical issues.' %>
+
+  <meta name="author" content="Strategy+">
   <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 
   <%= favicon_link_tag "apple-icon-57x57.png", rel: "apple-touch-icon", sizes: "57x57" %>
