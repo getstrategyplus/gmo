@@ -3,7 +3,7 @@
       <div class="container">
 
         <div class="dateselect">
-          <p class="title">NEWS SELECTION FOR</p>
+          <p class="title">CURATED SELECTION FOR</p>
           <ul class="list-inline list-calselect">
             <li><a href="#" class="btn-calprev"><i class="icon-arrow"></i></a></li>
             <li class="currentdate"><a href="#" class="btn-pickdate"><%= l @news_date, format: :long %><i class="icon-calendar"></i></a></li>
@@ -19,7 +19,7 @@
             <%= render newsletter %>
           <% end %>
         <% else %>
-          <p class="lead text-center">No articles yet.</p>
+          <p class="lead text-center">There's no entry (yet) for today.</p><p class="small text-center">Please press the left keystroke or tap the left button to go through the archives.</p>
         <% end %>
         </div> <!-- End News Slider -->
         </div>
