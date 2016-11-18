@@ -23,4 +23,5 @@ en:
   hello: "Hello world"
   date:
     formats:
+      short: "%D"
       long: "%A, %b %e, %Y"

@@ -13,12 +13,8 @@
         <!-- News Slider -->
         <div class="newslider">
         <% if !@newsletters.empty? %>
-          <% content_for :title do %>
-            <%= "#{@newsletters.first.title} - #{l(@newsletters.first.send_at, format: :short)}" %>          
-          <% end %>
-          <% content_for :meta_description do %>
-            <%= @newsletters.first.excerpt  %>
-          <% end %>
+          <% content_for :title, @newsletters.first.title+' - '+l(@newsletters.first.sent_at, format: :short) %>         
+          <% content_for :meta_description, @newsletters.first.excerpt  %>
           <% @newsletters.each do |newsletter| %>
             <%= render newsletter %>
           <% end %>
