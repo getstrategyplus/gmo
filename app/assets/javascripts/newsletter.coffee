@@ -63,21 +63,16 @@ $ ->
     e.preventDefault();
     window.open($(this).attr('href'), 'Share', 'resizable,scrollbars,status,width=600,height=350,left='+((screen.width / 2) - (600 / 2)) + ',top=' + ((screen.height / 2) - (350 / 2)))
 
-  $('.newsletter').on 'click', (e) ->
-
+  $('.btn-newslettermore').on 'click', (e) ->
     if $(e.target).hasClass('btn-newslettermore')
       $('.btn-newslettermore').toggleClass 'open'
-      console.log 'button'
     else if $(e.target).parents('.form-newsletter').length == 0
       $('#newsletter-plus').collapse 'show'
       $('.btn-newslettermore').addClass 'open'
-      console.log 'other'
-    return
 
   #-- Newsletter subscribe Thank you message
   $('.btn-subscribe').on 'click', (e) ->
     e.preventDefault()
-    console.log this
     $.post $(this).closest('form').attr('action'), $(this).closest('form').serialize(), ->
       $('.newsletter .twocols, .btn-newslettermore, #newsletter-plus').fadeOut ->
         $('.newsletter-thankyou').fadeIn()
