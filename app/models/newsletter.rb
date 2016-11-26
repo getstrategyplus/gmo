@@ -9,6 +9,10 @@ class Newsletter < ApplicationRecord
     Newsletter.select(:sent_at).where('sent_at > ?', date).minimum(:sent_at) 
   end
 
+  def self.get_dates_with_news
+  	Newsletter.select('sent_at').group(:sent_at)
+  end
+
   def send_to_buffer
     BufferNewsletterJob.perform_later(self.id)
   end

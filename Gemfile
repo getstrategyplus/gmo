@@ -29,6 +29,7 @@ gem 'clockwork', require: false
 gem 'delayed_job_active_record'
 gem 'gibbon'
 gem 'buffer'
+gem 'gon'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

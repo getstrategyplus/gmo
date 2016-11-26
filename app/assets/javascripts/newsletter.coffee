@@ -21,6 +21,11 @@ $ ->
     $('body').removeClass 'showabout'
     return
 
+  forceTwoDigits = (val) ->
+    if val < 10
+      return "0#{val}"
+    return val
+
   #-- Date picker
   if $('.btn-pickdate').length != 0
 
@@ -30,8 +35,26 @@ $ ->
     $('.btn-pickdate').datepicker(
       orientation: 'bottom auto'
       autoclose: true
+      todayHighlight: false
       format: 'M/dd/yyyy'
       disableTouchKeyboard: true
+
+      beforeShowDay: (date) ->
+        dateFormat = date.getFullYear() + '-' + forceTwoDigits((date.getMonth() + 1)) + '-' + forceTwoDigits(date.getDate())        
+
+        index = 0
+        while index < gon.dates_with_news.length
+          date_with_news = gon.dates_with_news[index]          
+          #console.log dateFormat
+          #console.log date_with_news.sent_at
+          if date_with_news.sent_at == dateFormat
+            #console.log ' ***************** dentro do IF'
+            return {classes: 'today', tooltip: 'This day has News'}
+          #else
+          #  return false  
+          ++index    
+          
+
     ).on 'changeDate', (e) ->
       date = e.date
       mm = (date.getMonth() + 1).toString();
