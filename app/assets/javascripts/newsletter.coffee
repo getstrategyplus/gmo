@@ -45,14 +45,14 @@ $ ->
         index = 0
         while index < gon.dates_with_news.length
           date_with_news = gon.dates_with_news[index]          
+          ++index
           #console.log dateFormat
           #console.log date_with_news.sent_at
           if date_with_news.sent_at == dateFormat
             #console.log ' ***************** dentro do IF'
-            return {classes: 'today', tooltip: 'This day has News'}
-          #else
-          #  return false  
-          ++index    
+            return {classes: 'today', tooltip: 'This day has News'}          
+        if index == gon.dates_with_news.length               
+          return {classes: 'disabled'}
           
 
     ).on 'changeDate', (e) ->
