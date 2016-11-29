@@ -5,6 +5,7 @@
 
 $ ->
   #-- Add loaded class after delay
+  
   setTimeout (->
     $('body').addClass 'delayloaded'
     return
@@ -100,6 +101,20 @@ $ ->
       $('.newsletter .twocols, .btn-newslettermore, #newsletter-plus').fadeOut ->
         $('.newsletter-thankyou').fadeIn()
 
+  #-- Functions for buttons preva nd next dates     
+
+  nextDate = () ->
+      console.log gon.current_index
+      console.log gon.base_url + '/' + gon.dates_with_news[gon.current_index + 1].sent_at
+      window.location = "http://localhost:3000/" + gon.dates_with_news[gon.current_index + 1].sent_at
+    #return val
+
+  previousDate = () ->
+      console.log gon.current_index
+      console.log gon.base_url + '/' + gon.dates_with_news[gon.current_index - 1].sent_at
+      window.location = "http://localhost:3000/" + gon.dates_with_news[gon.current_index - 1].sent_at
+    #return val
+
   #-- News Blocks slider
   if $('.newslider').length != 0
     $('.newslider').owlCarousel
@@ -121,11 +136,13 @@ $ ->
       e.preventDefault()
       if !$(this).hasClass('disabled')
         slider.next()
+      nextDate(gon.current_index)       
       return
     $('.btn-calprev').on 'click', (e) ->
       e.preventDefault()
       if !$(this).hasClass('disabled')
         slider.prev()
+      previousDate(gon.current_index)  
       return
     #-- Navigate slider with keys
     $(document).keyup (e) ->

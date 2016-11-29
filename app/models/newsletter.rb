@@ -10,7 +10,7 @@ class Newsletter < ApplicationRecord
   end
 
   def self.get_dates_with_news
-  	Newsletter.select('sent_at').group(:sent_at)
+  	Newsletter.select('sent_at').group(:sent_at).order(:sent_at)
   end
 
   def send_to_buffer
