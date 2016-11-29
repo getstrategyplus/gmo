@@ -104,16 +104,10 @@ $ ->
   #-- Functions for buttons preva nd next dates     
 
   nextDate = () ->
-      console.log gon.current_index
-      console.log gon.base_url + '/' + gon.dates_with_news[gon.current_index + 1].sent_at
-      window.location = "http://localhost:3000/" + gon.dates_with_news[gon.current_index + 1].sent_at
-    #return val
+    window.location = gon.next_url
 
   previousDate = () ->
-      console.log gon.current_index
-      console.log gon.base_url + '/' + gon.dates_with_news[gon.current_index - 1].sent_at
-      window.location = "http://localhost:3000/" + gon.dates_with_news[gon.current_index - 1].sent_at
-    #return val
+    window.location = gon.previous_url
 
   #-- News Blocks slider
   if $('.newslider').length != 0
