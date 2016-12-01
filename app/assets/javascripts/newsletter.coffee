@@ -41,17 +41,17 @@ $ ->
       disableTouchKeyboard: true
 
       beforeShowDay: (date) ->
-        dateFormat = date.getFullYear() + '-' + forceTwoDigits((date.getMonth() + 1)) + '-' + forceTwoDigits(date.getDate())        
+        dateFormat = date.getFullYear() + '-' + forceTwoDigits((date.getMonth()) + 1) + '-' + forceTwoDigits(date.getDate())        
 
         index = 0
         while index < gon.dates_with_news.length
           date_with_news = gon.dates_with_news[index]          
           ++index
-          #console.log dateFormat
-          #console.log date_with_news.sent_at
+          console.log dateFormat + " dia corrente "
+          console.log date_with_news.sent_at + " date_with_news "
           if date_with_news.sent_at == dateFormat
-            #console.log ' ***************** dentro do IF'
-            return {classes: 'today', tooltip: 'This day has News'}          
+            console.log ' ***************** dentro do IF'
+            return {classes: 'highlight', tooltip: 'This day has News'}          
         if index == gon.dates_with_news.length               
           return {classes: 'disabled'}
           
