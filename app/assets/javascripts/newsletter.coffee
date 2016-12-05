@@ -5,6 +5,7 @@
 
 $ ->
   #-- Add loaded class after delay
+  
   setTimeout (->
     $('body').addClass 'delayloaded'
     return
@@ -21,6 +22,11 @@ $ ->
     $('body').removeClass 'showabout'
     return
 
+  forceTwoDigits = (val) ->
+    if val < 10
+      return "0#{val}"
+    return val
+
   #-- Date picker
   if $('.btn-pickdate').length != 0
 
@@ -30,8 +36,26 @@ $ ->
     $('.btn-pickdate').datepicker(
       orientation: 'bottom auto'
       autoclose: true
+      todayHighlight: false
       format: 'M/dd/yyyy'
       disableTouchKeyboard: true
+
+      beforeShowDay: (date) ->
+        dateFormat = date.getFullYear() + '-' + forceTwoDigits((date.getMonth()) + 1) + '-' + forceTwoDigits(date.getDate())        
+
+        index = 0
+        while index < gon.dates_with_news.length
+          date_with_news = gon.dates_with_news[index]          
+          ++index
+          console.log dateFormat + " dia corrente "
+          console.log date_with_news.sent_at + " date_with_news "
+          if date_with_news.sent_at == dateFormat
+            console.log ' ***************** dentro do IF'
+            return {classes: 'highlight', tooltip: 'This day has News'}          
+        if index == gon.dates_with_news.length               
+          return {classes: 'disabled'}
+          
+
     ).on 'changeDate', (e) ->
       date = e.date
       mm = (date.getMonth() + 1).toString();
@@ -77,6 +101,14 @@ $ ->
       $('.newsletter .twocols, .btn-newslettermore, #newsletter-plus').fadeOut ->
         $('.newsletter-thankyou').fadeIn()
 
+  #-- Functions for buttons preva nd next dates     
+
+  nextDate = () ->
+    window.location = gon.next_url
+
+  previousDate = () ->
+    window.location = gon.previous_url
+
   #-- News Blocks slider
   if $('.newslider').length != 0
     $('.newslider').owlCarousel
@@ -98,11 +130,13 @@ $ ->
       e.preventDefault()
       if !$(this).hasClass('disabled')
         slider.next()
+      nextDate(gon.current_index)       
       return
     $('.btn-calprev').on 'click', (e) ->
       e.preventDefault()
       if !$(this).hasClass('disabled')
         slider.prev()
+      previousDate(gon.current_index)  
       return
     #-- Navigate slider with keys
     $(document).keyup (e) ->
