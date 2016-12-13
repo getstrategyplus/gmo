@@ -59,9 +59,9 @@
               <li>
                 <a href="http://facebook.com/getstrategyplus" target="_blank"><i class="icon-facebook"></i></a>
               </li>
-              <li>
+              <!-- <li>
                 <a href="http://instagram.com/getstrategyplus" target="_blank"><i class="icon-instagram"></i></a>
-              </li>
+              </li> -->
               <li>
                 <a href="http://twitter.com/getstrategyplus" target="_blank"><i class="icon-twitter"></i></a>
               </li>
@@ -70,7 +70,7 @@
         </div>
       </div>
       <div class="logobar">
-        <%= image_tag "logo-strategyplus.png", alt: "Strategy+ - EU news tagline" %>
+        <%= image_tag "logo-strategyplus.png", alt: "Strategy+, the smartest way to understand politics." %>
         <p class="tagline">The smartest way to understand global politics.</p>
       </div>
     </header>   <!-- End Header -->
@@ -82,13 +82,13 @@
         <div class="newsletter">
           <div class="twocols">
             <div class="colleft">
-              <p class="intro">A curated newsletter to follow today's major geopolitical trends.</p>
+              <p class="intro">A curated newsletter to follow recent major geopolitical trends.</p>
             </div>
             <div class="colright">
               <%= form_tag subscribe_path, method: :post, remote: true, class: 'form form-newsletter' do %>
                 <div class="form-prefix">
                   <i class="icon-email picto"></i>
-                    <%= text_field_tag :email, nil, placeholder: 'Subscribe to Newsletter', class: 'form-control', required: true %>
+                    <%= text_field_tag :email, nil, placeholder: 'Subscribe to Strategy+', class: 'form-control', required: true %>
                     <%= button_tag 'Subscribe', class: 'btn-subscribe' %>
                 </div>
               <% end %>
@@ -98,8 +98,8 @@
           <div class="collapse" id="newsletter-plus">
             <div class="newsletter-plus">
               <ul class="list-inline list-checks">
-                <li>Every morning, you receive a curated selection of articles about a specific topic.</li>
-                <li>We send you every Sunday a small editorial about the political events of the week.</li>
+                <li>Every Monday, you receive a curated selection of articles about geopolitical news.</li>
+                <li>We send you every Friday a small editorial about the political events of the week.</li>
                 <li>And a monthly analysis of the geopolitical situation to take a wider perspective.</li>
               </ul>
             </div>
@@ -126,7 +126,7 @@
         <h2>About us</h2>
           <p>Strategy+ is a free online publication about global politics available under the form of a simple email newsletter. It allows you to understand today's geopolitical trends that shape our world.</p>
 
-          <p>Strategy+ is the brainchild of Paul Fleury, a French web entrepreneur with a background in political sciences. Our contributors include Nagy Sebbache, Simon DeGroet and Sophie Mansart.</p>
+          <p>Strategy+ is the brainchild of Paul Fleury, a French web entrepreneur with a background in political sciences. Our contributors also include Simon van der Sart & Elodie Cresson.</p>
 
           <p>Strategy+ makes use of <a href="https://goodbits.io/" target="_blank">Goodbits</a>, <a href="https://mailchimp.com/" target="_blank">Mailchimp</a> and <a href="https://buffer.com/" target=_"blank">Buffer</a>. Paul Fleury and Gustavo Honorato, a talented Rails developer, together engineered <a href="https://github.com/getstrategyplus/strategyplus" target="_blank">an open source script</a> to combine the power of the three services and to provide an efficient newsletter publication platform.</p>
 
@@ -141,7 +141,7 @@
   <!--
   <footer class="footer">
     <div class="inner">
-      <p class="copy">&COPY; 2016. The Three Monkeys. All Rights Reserved</p>
+      <p class="copy">&COPY; 2017. Strategy+. All Rights Reserved</p>
     </div>
   </footer> --> <!-- End Footer -->
 
