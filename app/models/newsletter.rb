@@ -3,7 +3,7 @@ class Newsletter < ApplicationRecord
 
   scope :sent_at_date, -> (date) { where(sent_at: date) }
 
-  after_commit :send_to_buffer, on: [:create]
+  after_create_commit :send_to_buffer
 
   def self.next_sent_date(date)
     Newsletter.select(:sent_at).where('sent_at > ?', date).minimum(:sent_at) 
