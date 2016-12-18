@@ -4,6 +4,9 @@
 # JavaScript Document
 
 $ ->
+  $('.btn-calnext').addClass('disabled') unless gon.next_url
+  $('.btn-calprev').addClass('disabled') unless gon.previous_url
+
   #-- Add loaded class after delay
   
   setTimeout (->
@@ -62,7 +65,7 @@ $ ->
       dd = date.getDate().toString();
 
       redirect_url = "/#{[!dd[1] and '0', dd,'-', !mm[1] and '0', mm,'-', date.getFullYear()].filter((e)-> e != false ).join('')}";   
-      window.location = redirect_url
+      Turbolinks.visit(redirect_url)
 
     $('.btn-pickdate-alt').on 'click', (e) ->
       e.preventDefault()
@@ -103,11 +106,7 @@ $ ->
 
   #-- Functions for buttons preva nd next dates     
 
-  nextDate = () ->
-    window.location = gon.next_url
 
-  previousDate = () ->
-    window.location = gon.previous_url
 
   #-- News Blocks slider
   if $('.newslider').length != 0
@@ -124,6 +123,14 @@ $ ->
         return
 
     slider = $('.newslider').data('owlCarousel')
+
+    nextDate = () ->
+      if gon.next_url
+        Turbolinks.visit(gon.next_url) 
+
+    previousDate = () ->
+      if gon.previous_url
+        Turbolinks.visit(gon.previous_url)
 
     #- Slider navigation - change dates
     $('.btn-calnext').on 'click', (e) ->
@@ -142,8 +149,8 @@ $ ->
     $(document).keyup (e) ->
       key = e.which
       if key == 39
-        slider.next()
+        $('.btn-calnext').click()
       if key == 37
-        slider.prev()
+        $('.btn-calprev').click()
       return
   return

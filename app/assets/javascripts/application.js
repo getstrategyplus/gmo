@@ -11,9 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap.min
 //= require prefixfree.min
 //= require bootstrap-datepicker.min
 //= require owl.carousel.min
 //= require_tree .
+//= require turbolinks

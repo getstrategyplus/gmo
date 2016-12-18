@@ -14,6 +14,7 @@
  *= require bootstrap.min
  *= require checkbox
  *= require owl.carousel
+ *= require animate
  *= require_tree .
  *= require_self
  */
