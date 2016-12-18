@@ -5,7 +5,7 @@ class Crawler::Newsletter < Struct.new(:address_url)
   end
 
   def excerpt
-    parser.css('#templateBody .mcnTextContent p')[1].text
+    parser.css('#templateBody .mcnTextContent p')[1].inner_html
   end
 
   def sent_at

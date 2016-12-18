@@ -7,6 +7,7 @@ module ApplicationHelper
   end
 
   def page_meta_description
-    tag :meta, name: 'description', content: truncate((content_for?(:meta_description) ? content_for(:meta_description) : 'Strategy+ is the smartest way to follow various topics about the global political agenda. Receive every day a small email to receive a briefing about key geopolitical issues.'), length: 150)    
+    description = content_for?(:meta_description) ? content_for(:meta_description) : 'Strategy+ is the smartest way to follow various topics about the global political agenda. Receive every day a small email to receive a briefing about key geopolitical issues.'
+    tag :meta, name: 'description', content: sanitize(truncate(description, length: 150))
   end
 end
