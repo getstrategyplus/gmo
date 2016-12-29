@@ -15,7 +15,7 @@ class BufferNewsletterJob < ApplicationJob
     )
 
     create_update(client, 
-      text: "#{newsletter.title} - #{newsletter.excerpt} - #{url}", 
+      text: "#{newsletter.title} - #{ActionView::Helpers::SanitizeHelper.strip_tags(newsletter.excerpt)} - #{url}", 
       image: newsletter.news.first.image,
       services: ['facebook']
     )
@@ -29,7 +29,7 @@ class BufferNewsletterJob < ApplicationJob
         )
 
         create_update(client, 
-          text: "#{news.title} - #{news.excerpt} - #{url}", 
+          text: "#{news.title} - #{ActionView::Helpers::SanitizeHelper.strip_tags(news.excerpt)} - #{url}", 
           image: n.image, 
           services: ['facebook']
         )
