@@ -1,7 +1,9 @@
 
 class BufferNewsletterJob < ApplicationJob
   queue_as :default
- 
+  
+  include ActionView::Helpers::SanitizeHelper
+  
   def perform(id)
     newsletter = Newsletter.find(id)
     url = Rails.application.routes.url_helpers.newsletter_show_url(date: newsletter.sent_at.strftime("%d-%m-%Y"), host: 'getstrategyplus.com')
@@ -15,26 +17,10 @@ class BufferNewsletterJob < ApplicationJob
     )
 
     create_update(client, 
-      text: "#{newsletter.title} - #{ActionView::Helpers::SanitizeHelper.strip_tags(newsletter.excerpt)} - #{url}", 
+      text: "#{newsletter.title} - #{strip_tags(newsletter.excerpt)} - #{url}", 
       image: newsletter.news.first.image,
       services: ['facebook']
     )
-
-    unless newsletter.sent_at.sunday? || newsletter.sent_at.saturday?
-      newsletter.news.each do |n|
-        create_update(client, 
-          text: "#{news.title} - #{url}", 
-          image: n.image, 
-          services: ['twitter']
-        )
-
-        create_update(client, 
-          text: "#{news.title} - #{ActionView::Helpers::SanitizeHelper.strip_tags(news.excerpt)} - #{url}", 
-          image: n.image, 
-          services: ['facebook']
-        )
-      end
-    end
   end
 
   private
