@@ -4,6 +4,10 @@ class NewslettersController < ApplicationController
 
   rescue_from InvalidDateParam, with: -> { redirect_to root_path, status: :moved_permanently  }
 
+  def index
+    redirect_to root_path
+  end
+
   def show
     @news_date = param_to_date(params[:date])
     @newsletters = Newsletter.sent_at_date(@news_date)
