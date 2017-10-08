@@ -14,5 +14,6 @@ module StrategyPlus
 
     config.autoload_paths << Rails.root.join('app')
     config.active_job.queue_adapter = :delayed_job
+    config.relative_url_root = '/plus'
   end
 end
